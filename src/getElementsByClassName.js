@@ -4,7 +4,21 @@
 // };
 
 // But instead we're going to implement it from scratch:
-var getElementsByClassName = function(className
-) {
-  // your code here
+var getElementsByClassName = function(className) {
+  var result = [];
+  var recursion = function (element, className) {
+    var classes = element.classList;
+    var children = element.childNodes;
+    if (classes !== undefined && classes.contains(className)) {
+      result.push(element);
+    }
+    if (children.length > 0) {
+      children.forEach((child) => {
+        recursion(child, className);
+      });
+    }
+    return result;
+  };
+  var result = recursion(document.body, className);
+  return result;
 };

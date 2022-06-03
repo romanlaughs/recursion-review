@@ -5,7 +5,6 @@
 
 var stringifyJSON = function(obj) {
   // your code goes here
-  console.log('EXPECTED: ', JSON.stringify(obj));
   var result = '';
 
   //BASE CASES
